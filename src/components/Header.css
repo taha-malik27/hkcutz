@@ -1,0 +1,101 @@
+/* src/components/Header.css */
+/* Load Poppins, Bebas Neue and Oswald */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+:root {
+  --themegray: #ccc;
+}
+
+.header-nav {
+  font-family: 'Poppins', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #000;
+  padding: 1.5rem 2.5rem;
+  border: 8px solid var(--themegray);
+  display: flex;
+  align-items: center;
+}
+
+/* Logo */
+/* To try Oswald, just swap the font-family here */
+.logo {
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* Desktop menu */
+.desktop-menu {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .desktop-menu {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 1.5rem;
+  }
+}
+
+/* Nav links */
+.nav-link {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: #ccc;
+  background: transparent;
+}
+
+/* Mobile toggle icon */
+.mobile-toggle {
+  margin-left: auto;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .mobile-toggle {
+    display: none;
+  }
+}
+
+/* Mobile dropdown */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #000;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 0;
+}
+.mobile-menu.open {
+  display: flex;
+}
+.mobile-link {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.75rem;
+  width: 100%;
+  transition: color 0.2s;
+}
+.mobile-link:hover {
+  color: #ccc;
+  background: transparent;
+}
